@@ -12,9 +12,7 @@ describe("/register", () => {
     const response = await request(server).post('/api/auth/register').send(newUser);
     expect(response.status).toBe(201);
     expect(response.type).toBe("application/json");
-    expect(response.body).toEqual({
-      status: 'success',
-      message: 'Registered successfully. Welcome, paulsmith.'
-    });
+    expect(response.body.status).toBe('success');
+    expect(response.body.message).toBe('Registered successfully. Welcome, paulsmith.');
   });
 });

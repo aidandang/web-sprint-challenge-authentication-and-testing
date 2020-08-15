@@ -9,5 +9,6 @@ describe("/login", () => {
     expect(response.status).toBe(201);
     expect(response.type).toBe("application/json");
     expect(response.body.token).toBeDefined();
+    expect(response.body.message).toBe('Welcome, paulsmith.')
   });
 });
