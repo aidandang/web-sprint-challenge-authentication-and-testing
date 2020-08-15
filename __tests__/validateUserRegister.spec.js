@@ -14,4 +14,15 @@ describe("validate user register", () => {
     expect(response.body.status).toBe('fail');
     expect(response.body.message).toBe('username and password fields are missing.');
   });
+
+  it("username no more than 255 chars", async () => {
+    const newUser = {
+      username: "paulsmithpaulsmithpaulsmithpaulsmithpaulsmithpaulsmithpaulsmithpaulsmithpaulsmithpaulsmithpaulsmithpaulsmithpaulsmithpaulsmithpaulsmithpaulsmithpaulsmithpaulsmithpaulsmithpaulsmithpaulsmithpaulsmithpaulsmithpaulsmithpaulsmithpaulsmithpaulsmithpaulsmithpaulsmithpaulsmithpaulsmithpaulsmithpaulsmithpaulsmithpaulsmithpaulsmithpaulsmithpaulsmithpaulsmithpaulsmith",
+      password: "dgdfgdgf"
+    }
+    const response = await request(server).post('/api/auth/register').send(newUser);
+    expect(response.status).toBe(404);
+    expect(response.body.status).toBe('fail');
+    expect(response.body.message).toBe('username is no more than 255 characters.');
+  });
 });
