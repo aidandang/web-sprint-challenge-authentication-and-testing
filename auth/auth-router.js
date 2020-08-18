@@ -1,11 +1,11 @@
+const authController = require('../controllers/authController');
+const validationController = require('../controllers/validationController');
 const router = require('express').Router();
 
-router.post('/register', (req, res) => {
-  // implement registration
-});
+// implement registration
+router.post('/register', validationController.validateUserRegister, authController.register);
 
-router.post('/login', (req, res) => {
-  // implement login
-});
+// implement login
+router.post('/login', authController.login);
 
 module.exports = router;

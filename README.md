@@ -25,12 +25,27 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. Differences between using _sessions_ or _JSON Web Tokens_ for authentication.
+ANWSER:
+
+- Session authentication: the sessions are stored in the server's memory, scaling becomes an issue when there is a huge number of users using the system at once. 
+- JSON Web Token authentication: JSON web tokens are stateless because claims are stored client-side, rather than in the server's memory. Authentication can occur locally, instead of per request, where requests have to go through the server's database, or similar locations.
 
 2. What does `bcrypt` do to help us store passwords in a secure manner.
+ANWSER:
+
+- Bcrypt hashed the plain text passwords from user with a salt before they are persisted to the data storage. When users attempt to login, they provide a plain text password, bcrypt validate the provided plain text password against the hash that was stored when the user registered.
 
 3. How are unit tests different from integration and end-to-end testing.
+ANWSER:
+
+- We use unit testing to test the application logic, business logic while integration testing to test the route handlers and middleware and
+API endpoints testing for returning the expected values and HTTP status codes, also to make sure that we’re returning the data using the right format (HTML, XML, JSON) and several other things.
 
 4. How _Test Driven Development_ changes the way we write applications and tests.
+ANWSER:
+
+- Test-driven development is an evolutionary approach to development which combines test-first development where you write a test before you write just enough production code to fulfill that test and refactoring.
+- Instead of writing functional code first and then your testing code as an afterthought, if you write it at all, you instead write your test code before your functional code.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
